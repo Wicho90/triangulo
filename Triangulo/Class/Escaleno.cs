@@ -20,5 +20,10 @@ namespace Triangulo.Class
         {
 
         }
+
+        public Escaleno(Tamaños item, Colores item2) : base(item, item2)
+        {
+
+        }
     }
 }

@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Class\Escaleno.cs" />
     <Compile Include="Class\ITriangulo.cs" />
-    <Compile Include="Class\Sizes\Figura.cs" />
+    <Compile Include="Class\Figura.cs" />
     <Compile Include="Class\Triangulo.cs" />
     <Compile Include="comun\Enums.cs" />
     <Compile Include="Form1.cs">

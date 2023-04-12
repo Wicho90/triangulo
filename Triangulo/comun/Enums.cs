@@ -13,4 +13,11 @@ namespace Triangulo.comun
         GRANDE,
         ENORME
     }
+
+    public enum Colores
+    {
+        RED,
+        AZUL,
+        VERDE,
+    }
 }

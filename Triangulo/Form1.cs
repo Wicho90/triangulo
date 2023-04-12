@@ -9,17 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Triangulo.Class;
 using Triangulo.Class.Sizes;
+using Triangulo.comun;
 
 namespace Triangulo
 {
     public partial class Form1 : Form
     {
-        PictureBox PictureBox;
         ITriangulo Triangulo { get; set; }
+
+        Tamaños Tamaño;
+        Colores Color;
         public Form1()
         {
-            Bitmap b = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             InitializeComponent();
+            cbxTalla.DataSource = Enum.GetValues(typeof(Tamaños));
+            cbxColor.DataSource = Enum.GetValues(typeof(Colores));
 
         }
 
@@ -52,11 +56,7 @@ namespace Triangulo
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
 
-            Triangulo = new Escaleno(comun.Tamaños.CHICO);
 
-
-            // Dibujamos el triángulo
-            e.Graphics.DrawPolygon(Pens.Black, Triangulo.Points().ToArray());
 
         }
 
@@ -77,6 +77,33 @@ namespace Triangulo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Triangulo = new Escaleno(comun.Tamaños.CHICO);
+            Triangulo.Dibujar(pictureBox1);
+
+        }
+
+        private void btnMediano_Click(object sender, EventArgs e)
+        {
+          
+
+
+            Triangulo = new Escaleno(comun.Tamaños.MEDIANO);
+            Triangulo.Dibujar(pictureBox1);
+
+        }
+
+        private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Enum.TryParse<Tamaños>(cbxTalla.SelectedValue.ToString(), out Tamaño);
+            Triangulo = new Escaleno(Tamaño, Color);
+            Triangulo.Dibujar(pictureBox1);
+        }
+
+        private void cbxColor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Enum.TryParse<Colores>(cbxColor.SelectedValue.ToString(), out Color);
+            Triangulo = new Escaleno(Tamaño, Color);
+            Triangulo.Dibujar(pictureBox1);
         }
     }
 }

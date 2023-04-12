@@ -15,13 +15,15 @@ namespace Triangulo.Class.Sizes
         public Point Punto2 { get; set; } = new Point(100, 100);
         public Point Punto3 { get; set; } = new Point(0, 100);
 
+        public Color Color { get; set; }
         public Figura()
         {
-
         }
 
         public Figura(Tamaños item) => SetDatos(item);
+        public Figura(Tamaños item, Colores item2): this(item) => SetColor(item2);
         
+  
 
         void SetDatos(Tamaños item)
         {
@@ -37,7 +39,35 @@ namespace Triangulo.Class.Sizes
                 Punto2 = new Point(200, 200);
                 Punto3 = new Point(0, 200);
             }
+            else if (item.Equals(Tamaños.GRANDE))
+            {
+                Punto1 = new Point(200, 200);
+                Punto2 = new Point(400, 400);
+                Punto3 = new Point(0, 400);
+            }
+            else if (item.Equals(Tamaños.ENORME))
+            {
+                Punto1 = new Point(400, 400);
+                Punto2 = new Point(800, 800);
+                Punto3 = new Point(0, 800);
+            }
 
+        }
+
+        void SetColor(Colores item)
+        {
+            if (item.Equals(Colores.RED))
+            {
+                Color = Color.Red;
+            }
+            else if (item.Equals(Colores.AZUL))
+            {
+                Color = Color.Blue;
+            }
+            else if (item.Equals(Colores.VERDE))
+            {
+                Color = Color.Green;
+            }
         }
 
         public List<Point> Points()
