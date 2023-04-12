@@ -48,20 +48,7 @@ namespace Triangulo
             Triangulo.Dibujar(pictureBox1);
         }
 
-        private void pictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -97,6 +84,47 @@ namespace Triangulo
             Triangulo.Dibujar(pictureBox1);
         }
 
+        private void btnDibujar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.W)
+            {
+                Triangulo.MoverArriba();
+            }
+
+            if (e.KeyCode == Keys.S)
+            {
+                Triangulo.MoverAbajo();
+            }
+
+            if (e.KeyCode == Keys.D)
+            {
+                Triangulo.MoverDerecha();
+
+            }
+
+            if (e.KeyCode == Keys.A)
+            {
+                Triangulo.MoverIzquierda();
+            }
+
+            Triangulo.Dibujar(pictureBox1);
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
           
@@ -124,30 +152,9 @@ namespace Triangulo
 
         }
 
-        private void btnDibujar_KeyDown(object sender, KeyEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.W)
-            {
-                Triangulo.MoverArriba();
-            }
 
-            if (e.KeyCode == Keys.S)
-            {
-                Triangulo.MoverAbajo();
-            }
-
-            if (e.KeyCode == Keys.D)
-            {
-                Triangulo.MoverDerecha();
-
-            }
-
-            if (e.KeyCode == Keys.A)
-            {
-                Triangulo.MoverIzquierda();
-            }
-
-            Triangulo.Dibujar(pictureBox1);
         }
     }
 }
