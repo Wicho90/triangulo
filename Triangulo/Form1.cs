@@ -149,5 +149,10 @@ namespace Triangulo
 
             Triangulo.Dibujar(pictureBox1);
         }
+        //Hola 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
