@@ -11,9 +11,9 @@ namespace Triangulo.Class.Sizes
 
     abstract class Figura
     {
-        public Point Punto1 { get; set; } = new Point(50,50);
-        public Point Punto2 { get; set; } = new Point(100, 100);
-        public Point Punto3 { get; set; } = new Point(0, 100);
+        public Point Punto1 { get; set; } = new Point(300, 50);
+        public Point Punto2 { get; set; } = new Point(350, 100);
+        public Point Punto3 { get; set; } = new Point(250, 100);
 
         public Color Color { get; set; }
         public Figura()
@@ -25,31 +25,31 @@ namespace Triangulo.Class.Sizes
         
   
 
-        void SetDatos(Tamaños item)
+        protected virtual void SetDatos(Tamaños item)
         {
             if (item.Equals(Tamaños.CHICO))
             {
-                Punto1 = new Point(50, 50);
-                Punto2 = new Point(100, 100);
-                Punto3 = new Point(0, 100);
+                Punto1 = new Point(300, 50);
+                Punto2 = new Point(350, 100);
+                Punto3 = new Point(250, 100);
             }
             else if (item.Equals(Tamaños.MEDIANO))
             {
-                Punto1 = new Point(100, 100);
-                Punto2 = new Point(200, 200);
-                Punto3 = new Point(0, 200);
+                Punto1 = new Point(300, 50);
+                Punto2 = new Point(400, 150);
+                Punto3 = new Point(200, 150);
             }
             else if (item.Equals(Tamaños.GRANDE))
             {
-                Punto1 = new Point(200, 200);
-                Punto2 = new Point(400, 400);
-                Punto3 = new Point(0, 400);
+                Punto1 = new Point(300, 50);
+                Punto2 = new Point(450, 200);
+                Punto3 = new Point(150, 200);
             }
             else if (item.Equals(Tamaños.ENORME))
             {
-                Punto1 = new Point(400, 400);
-                Punto2 = new Point(800, 800);
-                Punto3 = new Point(0, 800);
+                Punto1 = new Point(300, 50);
+                Punto2 = new Point(500, 250);
+                Punto3 = new Point(100, 250);
             }
 
         }
@@ -75,7 +75,32 @@ namespace Triangulo.Class.Sizes
             return new List<Point>() { Punto1, Punto2, Punto3 };
         }
 
-
+        public void MoverDerecha()
+        {
+            Punto1 = new Point(Punto1.X + 20, Punto1.Y);
+            Punto2 = new Point(Punto2.X + 20, Punto2.Y);
+            Punto3 = new Point(Punto3.X + 20, Punto3.Y);
+        }
+        
+        public void MoverIzquierda()
+        {
+            Punto1 = new Point(Punto1.X - 20, Punto1.Y);
+            Punto2 = new Point(Punto2.X - 20, Punto2.Y);
+            Punto3 = new Point(Punto3.X - 20, Punto3.Y);
+        }
+        public void MoverArriba()
+        {
+            Punto1 = new Point(Punto1.X, Punto1.Y - 20);
+            Punto2 = new Point(Punto2.X, Punto2.Y - 20);
+            Punto3 = new Point(Punto3.X, Punto3.Y - 20);
+        }
+        
+        public void MoverAbajo()
+        {
+            Punto1 = new Point(Punto1.X, Punto1.Y + 20);
+            Punto2 = new Point(Punto2.X, Punto2.Y + 20);
+            Punto3 = new Point(Punto3.X, Punto3.Y + 20);
+        }
 
     }
 }

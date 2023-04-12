@@ -19,44 +19,46 @@ namespace Triangulo
 
         Tamaños Tamaño;
         Colores Color;
+        Tipos Tipo;
+
         public Form1()
         {
             InitializeComponent();
             cbxTalla.DataSource = Enum.GetValues(typeof(Tamaños));
             cbxColor.DataSource = Enum.GetValues(typeof(Colores));
+            cbxTipo.DataSource = Enum.GetValues(typeof(Tipos));
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Enum.TryParse<Tamaños>(cbxTalla.SelectedValue.ToString(), out Tamaño);
         }
 
-        
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void cbxColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Enum.TryParse<Colores>(cbxColor.SelectedValue.ToString(), out Color);
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void dibujar_Click(object sender, EventArgs e)
         {
+            if (Tipo == Tipos.EQUILATERO)
+            {
+                Triangulo = new Equilatero(Tamaño, Color);
+            }
+            else if (Tipo == Tipos.ESCALENO)
+            {
+                Triangulo = new Escaleno(Tamaño, Color);
+            }
+            else if (Tipo == Tipos.ISOCELES)
+            {
+                Triangulo = new Isosceles(Tamaño, Color);
+            }
 
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxX1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
+            Triangulo.Dibujar(pictureBox1);
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
-
-
 
         }
 
@@ -70,39 +72,36 @@ namespace Triangulo
 
         }
 
-        private void dibujar_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            Enum.TryParse<Tipos>(cbxTipo.SelectedValue.ToString(), out Tipo);
+
+           
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Triangulo = new Escaleno(comun.Tamaños.CHICO);
-            Triangulo.Dibujar(pictureBox1);
-
-        }
-
-        private void btnMediano_Click(object sender, EventArgs e)
-        {
-          
-
-
-            Triangulo = new Escaleno(comun.Tamaños.MEDIANO);
-            Triangulo.Dibujar(pictureBox1);
-
-        }
-
-        private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Enum.TryParse<Tamaños>(cbxTalla.SelectedValue.ToString(), out Tamaño);
-            Triangulo = new Escaleno(Tamaño, Color);
+            Triangulo.MoverDerecha();
             Triangulo.Dibujar(pictureBox1);
         }
 
-        private void cbxColor_SelectedIndexChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            Enum.TryParse<Colores>(cbxColor.SelectedValue.ToString(), out Color);
-            Triangulo = new Escaleno(Tamaño, Color);
+            Triangulo.MoverArriba();
+            Triangulo.Dibujar(pictureBox1);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Triangulo.MoverIzquierda();
+            Triangulo.Dibujar(pictureBox1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Triangulo.MoverAbajo();
             Triangulo.Dibujar(pictureBox1);
         }
     }

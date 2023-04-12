@@ -13,5 +13,9 @@ namespace Triangulo.Class
     {
         List<Point> Points();
         void Dibujar(PictureBox pictureBox);
+        void MoverDerecha();
+        void MoverIzquierda();
+        void MoverArriba();
+        void MoverAbajo();
     }
 }

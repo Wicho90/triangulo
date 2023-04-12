@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Equilatero.cs" />
+    <Compile Include="Class\Isosceles.cs" />
     <Compile Include="Class\Escaleno.cs" />
     <Compile Include="Class\ITriangulo.cs" />
     <Compile Include="Class\Figura.cs" />
