@@ -52,6 +52,7 @@
     <Compile Include="Class\ITriangulo.cs" />
     <Compile Include="Class\Figura.cs" />
     <Compile Include="Class\Triangulo.cs" />
+    <Compile Include="Class\TrianguloFactory.cs" />
     <Compile Include="comun\Enums.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

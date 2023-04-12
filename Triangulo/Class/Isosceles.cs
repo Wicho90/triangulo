@@ -25,6 +25,10 @@ namespace Triangulo.Class
         {
 
         }
+        public Isosceles(Tamaños item, Colores item2, Angulos item3) : base(item, item2, item3)
+        {
+
+        }
 
         protected override void SetDatos(Tamaños item)
         {

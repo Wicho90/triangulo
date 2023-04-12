@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,11 @@ namespace Triangulo.Class
 
         }
 
-        
+        public Triangulo(Tamaños item, Colores item2, Angulos item3) : base(item, item2, item3)
+        {
+
+        }
+
 
         public void Dibujar(PictureBox pictureBox1)
         {
@@ -36,9 +41,17 @@ namespace Triangulo.Class
             pictureBox1.Image = (Image)b;
             Brush brush = new SolidBrush(Color);
 
+
+            Matrix myMatrix = new Matrix();
+            myMatrix.RotateAt(Angulo, Punto3, MatrixOrder.Append);
+
+            g.Transform = myMatrix;
             g.FillPolygon(brush, Points().ToArray());
             g.DrawPolygon(Pens.Black, Points().ToArray());
+
+            
         }
+
 
     }
 }

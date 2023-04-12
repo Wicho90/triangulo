@@ -20,6 +20,7 @@ namespace Triangulo
         Tamaños Tamaño;
         Colores Color;
         Tipos Tipo;
+        Angulos Angulo;
 
         public Form1()
         {
@@ -27,6 +28,7 @@ namespace Triangulo
             cbxTalla.DataSource = Enum.GetValues(typeof(Tamaños));
             cbxColor.DataSource = Enum.GetValues(typeof(Colores));
             cbxTipo.DataSource = Enum.GetValues(typeof(Tipos));
+            cbxAngulo.DataSource = Enum.GetValues(typeof(Angulos));
 
         }
 
@@ -41,19 +43,8 @@ namespace Triangulo
         }
         private void dibujar_Click(object sender, EventArgs e)
         {
-            if (Tipo == Tipos.EQUILATERO)
-            {
-                Triangulo = new Equilatero(Tamaño, Color);
-            }
-            else if (Tipo == Tipos.ESCALENO)
-            {
-                Triangulo = new Escaleno(Tamaño, Color);
-            }
-            else if (Tipo == Tipos.ISOCELES)
-            {
-                Triangulo = new Isosceles(Tamaño, Color);
-            }
 
+            Triangulo = TrianguloFactory.GetTriangulo(Tamaño, Color, Angulo, Tipo);
             Triangulo.Dibujar(pictureBox1);
         }
 
@@ -74,11 +65,12 @@ namespace Triangulo
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             Enum.TryParse<Tipos>(cbxTipo.SelectedValue.ToString(), out Tipo);
+        }
 
-           
-
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            Enum.TryParse<Angulos>(cbxAngulo.SelectedValue.ToString(), out Angulo);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -103,6 +95,45 @@ namespace Triangulo
         {
             Triangulo.MoverAbajo();
             Triangulo.Dibujar(pictureBox1);
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            Console.WriteLine(e.KeyCode.ToString());
+            
+            if (e.KeyCode == Keys.W)
+            {
+                MessageBox.Show("W");
+                Triangulo.MoverArriba();
+            }
+            
+            if (e.KeyCode == Keys.S)
+            {
+                MessageBox.Show("S");
+
+                Triangulo.MoverAbajo();
+
+            }
+
+            if (e.KeyCode == Keys.D)
+            {
+                Triangulo.MoverDerecha();
+
+            }
+
+            if (e.KeyCode == Keys.A)
+            {
+                Triangulo.MoverIzquierda();
+            }
+
+            Triangulo.Dibujar(pictureBox1);
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            MessageBox.Show(e.KeyChar.ToString());
         }
     }
 }

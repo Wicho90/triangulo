@@ -16,12 +16,15 @@ namespace Triangulo.Class.Sizes
         public Point Punto3 { get; set; } = new Point(250, 100);
 
         public Color Color { get; set; }
+
+        public int Angulo { get; set; }
         public Figura()
         {
         }
 
         public Figura(Tamaños item) => SetDatos(item);
         public Figura(Tamaños item, Colores item2): this(item) => SetColor(item2);
+        public Figura(Tamaños item, Colores item2, Angulos item3): this(item, item2) => SetAngulo(item3);
         
   
 
@@ -68,6 +71,48 @@ namespace Triangulo.Class.Sizes
             {
                 Color = Color.Green;
             }
+        }
+
+        void SetAngulo(Angulos item)
+        {
+
+            if (item.Equals(Angulos.CERO))
+            {
+                Angulo = 0;
+            }
+            else if (item.Equals(Angulos.CUARENTA_Y_CINCO))
+            {
+                Angulo = -45;
+            }
+            else if (item.Equals(Angulos.NOVENTA))
+            {
+                Angulo = -90;
+            }
+            else if (item.Equals(Angulos.CIENTO_TREINTA_Y_CINCO))
+            {
+                Angulo = -135;
+            }
+            else if (item.Equals(Angulos.CIENTO_OCHENTA))
+            {
+                Angulo = -180;
+            }
+            else if (item.Equals(Angulos.DOSCIENTOS_VEINTICINCO))
+            {
+                Angulo = -225;
+            }
+            else if (item.Equals(Angulos.DOSCIENTOS_SETENTA))
+            {
+                Angulo = -270;
+            }
+            else if (item.Equals(Angulos.TRESCIENTOS_QUINCE))
+            {
+                Angulo = -315;
+            }
+            else if (item.Equals(Angulos.TRESCIENTOS_SESENTA))
+            {
+                Angulo = -360;
+            }
+
         }
 
         public List<Point> Points()
