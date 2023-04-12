@@ -48,9 +48,10 @@ namespace Triangulo.Class
             g.Transform = myMatrix;
             g.FillPolygon(brush, Points().ToArray());
             g.DrawPolygon(Pens.Black, Points().ToArray());
-
             
         }
+
+        
 
 
     }

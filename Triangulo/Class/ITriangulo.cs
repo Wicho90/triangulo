@@ -17,5 +17,9 @@ namespace Triangulo.Class
         void MoverIzquierda();
         void MoverArriba();
         void MoverAbajo();
+
+        int GetPerimetro();
+
+        int GetArea();
     }
 }

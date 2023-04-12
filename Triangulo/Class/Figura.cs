@@ -12,9 +12,12 @@ namespace Triangulo.Class.Sizes
     abstract class Figura
     {
         public Point Punto1 { get; set; } = new Point(300, 50);
-        public Point Punto2 { get; set; } = new Point(350, 100);
-        public Point Punto3 { get; set; } = new Point(250, 100);
+        public Point Punto2 { get; set; } = new Point(330, 100);
+        public Point Punto3 { get; set; } = new Point(270, 100);
 
+        protected int LadoA = 100;
+        protected int LadoB = 100;
+        protected int LadoC = 100;
         public Color Color { get; set; }
 
         public int Angulo { get; set; }
@@ -33,26 +36,26 @@ namespace Triangulo.Class.Sizes
             if (item.Equals(Tamaños.CHICO))
             {
                 Punto1 = new Point(300, 50);
-                Punto2 = new Point(350, 100);
-                Punto3 = new Point(250, 100);
+                Punto2 = new Point(330, 102);
+                Punto3 = new Point(270, 102);
             }
             else if (item.Equals(Tamaños.MEDIANO))
             {
                 Punto1 = new Point(300, 50);
-                Punto2 = new Point(400, 150);
-                Punto3 = new Point(200, 150);
+                Punto2 = new Point(348, 134);
+                Punto3 = new Point(252, 134);
             }
             else if (item.Equals(Tamaños.GRANDE))
             {
                 Punto1 = new Point(300, 50);
-                Punto2 = new Point(450, 200);
-                Punto3 = new Point(150, 200);
+                Punto2 = new Point(366, 165);
+                Punto3 = new Point(234, 165);
             }
             else if (item.Equals(Tamaños.ENORME))
             {
                 Punto1 = new Point(300, 50);
-                Punto2 = new Point(500, 250);
-                Punto3 = new Point(100, 250);
+                Punto2 = new Point(384, 196);
+                Punto3 = new Point(216, 196);
             }
 
         }
@@ -147,5 +150,32 @@ namespace Triangulo.Class.Sizes
             Punto3 = new Point(Punto3.X, Punto3.Y + 20);
         }
 
+        public int GetPerimetro()
+        {
+
+            SetLados();
+            return LadoA + LadoB + LadoC;
+
+        }
+        
+        public int GetArea()
+        {
+            SetLados();
+            int altura = GetAltura();
+
+            return (LadoB * altura) / 2;
+        }
+
+        protected virtual int GetAltura()
+        {
+            return (int)Math.Sqrt(Math.Pow(LadoA, 2) - Math.Pow(LadoB / 2, 2));
+        }
+
+        void SetLados()
+        {
+            LadoA = (int)Math.Sqrt(Math.Pow(Punto2.X - Punto1.X, 2) + Math.Pow(Punto2.Y - Punto1.Y, 2));
+            LadoB = (int)Math.Sqrt(Math.Pow(Punto3.X - Punto2.X, 2) + Math.Pow(Punto3.Y - Punto2.Y, 2));
+            LadoC = (int)Math.Sqrt(Math.Pow(Punto1.X - Punto3.X, 2) + Math.Pow(Punto1.Y - Punto3.Y, 2));
+        }
     }
 }

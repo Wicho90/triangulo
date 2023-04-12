@@ -54,5 +54,10 @@ namespace Triangulo.Class
                 Punto3 = new Point(320, 250);
             }
         }
+
+        protected virtual int GetAltura()
+        {
+            return (int)Math.Sqrt(Math.Pow(LadoA, 2) - Math.Pow(LadoB / 2, 2));
+        }
     }
 }

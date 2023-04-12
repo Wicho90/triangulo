@@ -156,7 +156,17 @@ namespace Triangulo
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show(Triangulo.GetPerimetro().ToString() + "cm");
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show(Triangulo.GetArea().ToString() + "cm2");
+        }
         //Hola 
-       
+
     }
 }
