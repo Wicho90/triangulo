@@ -5,11 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Triangulo.comun;
 
 namespace Triangulo.Class
 {
-    public class Escaleno: Triangulo
+    class Escaleno: Triangulo, ITriangulo
     {
+        public Escaleno(): base()
+        {
 
+        }
+
+        public Escaleno(Tamaños item): base(item)
+        {
+
+        }
     }
 }

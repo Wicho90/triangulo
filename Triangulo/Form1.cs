@@ -14,9 +14,11 @@ namespace Triangulo
 {
     public partial class Form1 : Form
     {
-
+        PictureBox PictureBox;
+        ITriangulo Triangulo { get; set; }
         public Form1()
         {
+            Bitmap b = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             InitializeComponent();
 
         }
@@ -50,21 +52,31 @@ namespace Triangulo
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
 
-            Escaleno escaleno = new Escaleno();
-            Tamnho size = new Tamnho(new Point(50, 50), new Point(100, 100), new Point(0, 100));
-            escaleno.Sizes = size;
-
-            escaleno.Sizes.MakeMedium();
+            Triangulo = new Escaleno(comun.Tamaños.CHICO);
 
 
             // Dibujamos el triángulo
-            e.Graphics.DrawPolygon(Pens.Black, escaleno.Sizes.Points());
+            e.Graphics.DrawPolygon(Pens.Black, Triangulo.Points().ToArray());
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dibujar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

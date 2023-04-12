@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Escaleno.cs" />
-    <Compile Include="Class\Sizes\Tamnho.cs" />
+    <Compile Include="Class\ITriangulo.cs" />
+    <Compile Include="Class\Sizes\Figura.cs" />
     <Compile Include="Class\Triangulo.cs" />
+    <Compile Include="comun\Enums.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,5 +84,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

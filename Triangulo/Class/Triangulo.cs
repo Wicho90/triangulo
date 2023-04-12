@@ -6,15 +6,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Triangulo.Class.Sizes;
+using Triangulo.comun;
 
 namespace Triangulo.Class
 {
-    public class Triangulo
+    class Triangulo: Figura
     {
-        
-        public Tamnho Sizes { get; set; }
-        
-        
+
+        public Triangulo(): base(Tamaños.CHICO)
+        {
+
+        }
+        public Triangulo(Tamaños item): base(item)
+        {
+
+        }
 
     }
 }

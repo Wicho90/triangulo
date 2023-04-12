@@ -30,6 +30,8 @@ namespace Triangulo
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMediano = new System.Windows.Forms.Button();
+            this.btnCh = new System.Windows.Forms.Button();
             this.dibujar = new System.Windows.Forms.Button();
             this.textBoxY3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,6 +46,7 @@ namespace Triangulo
             this.textBoxX1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +54,9 @@ namespace Triangulo
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.btnMediano);
+            this.groupBox1.Controls.Add(this.btnCh);
             this.groupBox1.Controls.Add(this.dibujar);
             this.groupBox1.Controls.Add(this.textBoxY3);
             this.groupBox1.Controls.Add(this.label6);
@@ -71,14 +77,34 @@ namespace Triangulo
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // btnMediano
+            // 
+            this.btnMediano.Location = new System.Drawing.Point(143, 280);
+            this.btnMediano.Name = "btnMediano";
+            this.btnMediano.Size = new System.Drawing.Size(75, 23);
+            this.btnMediano.TabIndex = 14;
+            this.btnMediano.Text = "M";
+            this.btnMediano.UseVisualStyleBackColor = true;
+            // 
+            // btnCh
+            // 
+            this.btnCh.Location = new System.Drawing.Point(39, 280);
+            this.btnCh.Name = "btnCh";
+            this.btnCh.Size = new System.Drawing.Size(75, 23);
+            this.btnCh.TabIndex = 13;
+            this.btnCh.Text = "CH";
+            this.btnCh.UseVisualStyleBackColor = true;
+            this.btnCh.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dibujar
             // 
-            this.dibujar.Location = new System.Drawing.Point(63, 272);
+            this.dibujar.Location = new System.Drawing.Point(73, 235);
             this.dibujar.Name = "dibujar";
             this.dibujar.Size = new System.Drawing.Size(165, 23);
             this.dibujar.TabIndex = 12;
             this.dibujar.Text = "Dibujar";
             this.dibujar.UseVisualStyleBackColor = true;
+            this.dibujar.Click += new System.EventHandler(this.dibujar_Click);
             // 
             // textBoxY3
             // 
@@ -190,6 +216,14 @@ namespace Triangulo
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(174, 172);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,6 +233,7 @@ namespace Triangulo
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Click += new System.EventHandler(this.Form1_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -223,6 +258,9 @@ namespace Triangulo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button dibujar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnMediano;
+        private System.Windows.Forms.Button btnCh;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
