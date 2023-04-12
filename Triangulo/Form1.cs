@@ -99,21 +99,41 @@ namespace Triangulo
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+          
 
-            Console.WriteLine(e.KeyCode.ToString());
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void button5_KeyDown(object sender, KeyEventArgs e)
+        {
+
             
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDibujar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btnDibujar_KeyDown(object sender, KeyEventArgs e)
+        {
             if (e.KeyCode == Keys.W)
             {
-                MessageBox.Show("W");
                 Triangulo.MoverArriba();
             }
-            
+
             if (e.KeyCode == Keys.S)
             {
-                MessageBox.Show("S");
-
                 Triangulo.MoverAbajo();
-
             }
 
             if (e.KeyCode == Keys.D)
@@ -128,12 +148,6 @@ namespace Triangulo
             }
 
             Triangulo.Dibujar(pictureBox1);
-        }
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            MessageBox.Show(e.KeyChar.ToString());
         }
     }
 }

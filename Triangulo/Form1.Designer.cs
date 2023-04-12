@@ -31,10 +31,6 @@ namespace Triangulo
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbxAngulo = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.cbxColor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,10 +50,6 @@ namespace Triangulo
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbxAngulo);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbxTipo);
             this.groupBox1.Controls.Add(this.cbxColor);
             this.groupBox1.Controls.Add(this.label2);
@@ -70,72 +62,39 @@ namespace Triangulo
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cbxAngulo
             // 
+            this.cbxAngulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAngulo.FormattingEnabled = true;
             this.cbxAngulo.Location = new System.Drawing.Point(20, 253);
             this.cbxAngulo.Name = "cbxAngulo";
-            this.cbxAngulo.Size = new System.Drawing.Size(121, 24);
+            this.cbxAngulo.Size = new System.Drawing.Size(195, 24);
             this.cbxAngulo.TabIndex = 24;
+            this.cbxAngulo.TabStop = false;
             this.cbxAngulo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(113, 447);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Arriba";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(32, 476);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Izquierda";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(113, 476);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Abajo";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(194, 476);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Derecha";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbxTipo
             // 
+            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Location = new System.Drawing.Point(20, 197);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(121, 24);
             this.cbxTipo.TabIndex = 19;
+            this.cbxTipo.TabStop = false;
             this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cbxColor
             // 
+            this.cbxColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxColor.FormattingEnabled = true;
             this.cbxColor.Location = new System.Drawing.Point(20, 138);
             this.cbxColor.Name = "cbxColor";
             this.cbxColor.Size = new System.Drawing.Size(121, 24);
             this.cbxColor.TabIndex = 18;
+            this.cbxColor.TabStop = false;
             this.cbxColor.SelectedIndexChanged += new System.EventHandler(this.cbxColor_SelectedIndexChanged);
             // 
             // label2
@@ -158,11 +117,13 @@ namespace Triangulo
             // 
             // cbxTalla
             // 
+            this.cbxTalla.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTalla.FormattingEnabled = true;
             this.cbxTalla.Location = new System.Drawing.Point(20, 79);
             this.cbxTalla.Name = "cbxTalla";
             this.cbxTalla.Size = new System.Drawing.Size(121, 24);
             this.cbxTalla.TabIndex = 15;
+            this.cbxTalla.TabStop = false;
             this.cbxTalla.SelectedIndexChanged += new System.EventHandler(this.cbxTalla_SelectedIndexChanged);
             // 
             // pictureBox1
@@ -200,15 +161,18 @@ namespace Triangulo
             this.btnDibujar.Name = "btnDibujar";
             this.btnDibujar.Size = new System.Drawing.Size(165, 23);
             this.btnDibujar.TabIndex = 12;
+            this.btnDibujar.TabStop = false;
             this.btnDibujar.Text = "Dibujar";
             this.btnDibujar.UseVisualStyleBackColor = true;
             this.btnDibujar.Click += new System.EventHandler(this.dibujar_Click);
+            this.btnDibujar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDibujar_KeyDown);
+            this.btnDibujar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnDibujar_KeyPress);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1339, 778);
+            this.ClientSize = new System.Drawing.Size(1202, 778);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -232,10 +196,6 @@ namespace Triangulo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxTipo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cbxAngulo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
