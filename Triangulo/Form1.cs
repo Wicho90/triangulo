@@ -43,9 +43,8 @@ namespace Triangulo
         }
         private void dibujar_Click(object sender, EventArgs e)
         {
-
-            Triangulo = TrianguloFactory.GetTriangulo(Tamaño, Color, Angulo, Tipo);
-            Triangulo.Dibujar(pictureBox1);
+            Triangulo = TrianguloFactory.GetTriangulo(Tamaño, Color, Angulo, Tipo, pictureBox1);
+            Triangulo.Dibujar();
         }
 
        
@@ -60,54 +59,13 @@ namespace Triangulo
             Enum.TryParse<Angulos>(cbxAngulo.SelectedValue.ToString(), out Angulo);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Triangulo.MoverDerecha();
-            Triangulo.Dibujar(pictureBox1);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Triangulo.MoverArriba();
-            Triangulo.Dibujar(pictureBox1);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Triangulo.MoverIzquierda();
-            Triangulo.Dibujar(pictureBox1);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Triangulo.MoverAbajo();
-            Triangulo.Dibujar(pictureBox1);
-        }
+        
+        
 
         private void btnDibujar_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.W)
-            {
-                Triangulo.MoverArriba();
-            }
 
-            if (e.KeyCode == Keys.S)
-            {
-                Triangulo.MoverAbajo();
-            }
-
-            if (e.KeyCode == Keys.D)
-            {
-                Triangulo.MoverDerecha();
-
-            }
-
-            if (e.KeyCode == Keys.A)
-            {
-                Triangulo.MoverIzquierda();
-            }
-
-            Triangulo.Dibujar(pictureBox1);
+            Triangulo.KeyPress(sender, e);
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)

@@ -16,21 +16,21 @@ namespace Triangulo.Class
 
         }
 
-        public Isosceles(Tamaños item): base(item)
+        public Isosceles(Tamaños item, PictureBox pictureBox) : base(item, pictureBox)
         {
 
         }
 
-        public Isosceles(Tamaños item, Colores item2) : base(item, item2)
+        public Isosceles(Tamaños item, Colores item2, PictureBox pictureBox) : base(item, item2, pictureBox)
         {
 
         }
-        public Isosceles(Tamaños item, Colores item2, Angulos item3) : base(item, item2, item3)
+        public Isosceles(Tamaños item, Colores item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
         {
 
         }
 
-        protected override void SetDatos(Tamaños item)
+        protected override void SetDatos(Tamaños item, PictureBox pictureBox)
         {
             if (item.Equals(Tamaños.CHICO))
             {
@@ -52,6 +52,8 @@ namespace Triangulo.Class
                 Punto2 = new Point(380, 250);
                 Punto3 = new Point(220, 250);
             }
+
+            PictureBox = pictureBox;
         }
     }
 }

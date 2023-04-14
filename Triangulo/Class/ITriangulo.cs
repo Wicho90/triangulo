@@ -11,15 +11,16 @@ namespace Triangulo.Class
 {
     public interface ITriangulo
     {
+        Keys KeyUp { get; set; }
+        Keys KeyDown { get; set; }
         List<Point> Points();
-        void Dibujar(PictureBox pictureBox);
-        void MoverDerecha();
-        void MoverIzquierda();
-        void MoverArriba();
-        void MoverAbajo();
-
+        void Dibujar();
+     
         int GetPerimetro();
 
         int GetArea();
+
+        event EventHandler Up;
+        void KeyPress(object sender, KeyEventArgs e);
     }
 }

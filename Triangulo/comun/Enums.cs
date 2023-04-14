@@ -31,9 +31,9 @@ namespace Triangulo.comun
 
     public enum Angulos
     {
-        CERO,
-        CUARENTA_Y_CINCO,
-        NOVENTA,
+        CERO = 0,
+        CUARENTA_Y_CINCO = -45,
+        NOVENTA = -90,
         CIENTO_TREINTA_Y_CINCO,
         CIENTO_OCHENTA,
         DOSCIENTOS_VEINTICINCO,

@@ -16,17 +16,17 @@ namespace Triangulo.Class
 
         }
 
-        public Equilatero(Tamaños item): base(item)
+        public Equilatero(Tamaños item, PictureBox pictureBox) : base(item, pictureBox)
         {
 
         }
 
-        public Equilatero(Tamaños item, Colores item2) : base(item, item2)
+        public Equilatero(Tamaños item, Colores item2, PictureBox pictureBox) : base(item, item2, pictureBox)
         {
 
         }
         
-        public Equilatero(Tamaños item, Colores item2, Angulos item3) : base(item, item2, item3)
+        public Equilatero(Tamaños item, Colores item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
         {
 
         }

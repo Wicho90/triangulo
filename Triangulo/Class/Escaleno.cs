@@ -16,22 +16,22 @@ namespace Triangulo.Class
 
         }
 
-        public Escaleno(Tamaños item): base(item)
+        public Escaleno(Tamaños item, PictureBox pictureBox) : base(item, pictureBox)
         {
 
         }
 
-        public Escaleno(Tamaños item, Colores item2) : base(item, item2)
+        public Escaleno(Tamaños item, Colores item2, PictureBox pictureBox) : base(item, item2, pictureBox)
         {
 
         }
 
-        public Escaleno(Tamaños item, Colores item2, Angulos item3) : base(item, item2, item3)
+        public Escaleno(Tamaños item, Colores item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
         {
 
         }
 
-        protected override void SetDatos(Tamaños item)
+        protected override void SetDatos(Tamaños item, PictureBox pictureBox)
         {
             if (item.Equals(Tamaños.CHICO))
             {
@@ -53,11 +53,10 @@ namespace Triangulo.Class
                 Punto2 = new Point(510, 250);
                 Punto3 = new Point(320, 250);
             }
+
+            PictureBox = pictureBox;
         }
 
-        protected virtual int GetAltura()
-        {
-            return (int)Math.Sqrt(Math.Pow(LadoA, 2) - Math.Pow(LadoB / 2, 2));
-        }
+        
     }
 }
