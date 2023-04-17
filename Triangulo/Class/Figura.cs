@@ -42,8 +42,8 @@ namespace Triangulo.Class.Sizes
         }
 
         public Figura(Tamaños item, PictureBox pictureBox) => SetDatos(item, pictureBox);
-        public Figura(Tamaños item, Colores item2, PictureBox pictureBox) : this(item, pictureBox) => SetColor(item2);
-        public Figura(Tamaños item, Colores item2, Angulos item3, PictureBox pictureBox) : this(item, item2, pictureBox) => SetAngulo(item3);
+        public Figura(Tamaños item, KnownColor item2, PictureBox pictureBox) : this(item, pictureBox) => SetColor(item2);
+        public Figura(Tamaños item, KnownColor item2, Angulos item3, PictureBox pictureBox) : this(item, item2, pictureBox) => SetAngulo(item3);
         
         
 
@@ -94,16 +94,9 @@ namespace Triangulo.Class.Sizes
             
         }
 
-        void SetColor(Colores item)
+        void SetColor(KnownColor item)
         {
-            if (item.Equals(Colores.RED))
-                Color = Color.Red;
-            else if (item.Equals(Colores.AZUL))
-                Color = Color.Blue;
-            else if (item.Equals(Colores.VERDE))
-                Color = Color.Green;
-
-
+            Color = Color.FromKnownColor(item);
         }
 
         void SetAngulo(Angulos item)

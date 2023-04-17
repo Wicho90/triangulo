@@ -21,11 +21,11 @@ namespace Triangulo.Class
 
         }
 
-        public Isosceles(Tamaños item, Colores item2, PictureBox pictureBox) : base(item, item2, pictureBox)
+        public Isosceles(Tamaños item, KnownColor item2, PictureBox pictureBox) : base(item, item2, pictureBox)
         {
 
         }
-        public Isosceles(Tamaños item, Colores item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
+        public Isosceles(Tamaños item, KnownColor item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
         {
 
         }

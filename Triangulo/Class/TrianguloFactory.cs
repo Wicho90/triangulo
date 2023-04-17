@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Triangulo.Class
 {
     class TrianguloFactory
     {
-        public static ITriangulo GetTriangulo(Tamaños Tamaño, Colores Color, Angulos Angulo, Tipos tipo, PictureBox pictureBox)
+        public static ITriangulo GetTriangulo(Tamaños Tamaño, KnownColor Color, Angulos Angulo, Tipos tipo, PictureBox pictureBox)
         {
             ITriangulo Triangulo = null;
 

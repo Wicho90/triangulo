@@ -19,6 +19,8 @@ namespace Triangulo
 
         Tamaños Tamaño;
         Colores Color;
+
+        KnownColor C;
         Tipos Tipo;
         Angulos Angulo;
 
@@ -26,7 +28,10 @@ namespace Triangulo
         {
             InitializeComponent();
             cbxTalla.DataSource = Enum.GetValues(typeof(Tamaños));
-            cbxColor.DataSource = Enum.GetValues(typeof(Colores));
+
+            // cbxColor.DataSource = Enum.GetValues(typeof(Colores));
+            cbxColor.DataSource = Enum.GetValues(typeof(KnownColor));
+
             cbxTipo.DataSource = Enum.GetValues(typeof(Tipos));
             cbxAngulo.DataSource = Enum.GetValues(typeof(Angulos));
 
@@ -40,11 +45,13 @@ namespace Triangulo
 
         private void cbxColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Enum.TryParse<Colores>(cbxColor.SelectedValue.ToString(), out Color);
+            // Enum.TryParse<Colores>(cbxColor.SelectedValue.ToString(), out Color);
+            
+            Enum.TryParse<KnownColor>(cbxColor.SelectedValue.ToString(), out C);
         }
         private void dibujar_Click(object sender, EventArgs e)
         {
-            Triangulo = TrianguloFactory.GetTriangulo(Tamaño, Color, Angulo, Tipo, pictureBox1);
+            Triangulo = TrianguloFactory.GetTriangulo(Tamaño, C, Angulo, Tipo, pictureBox1);
             Triangulo.Dibujar();
         }
 

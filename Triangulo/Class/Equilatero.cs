@@ -21,12 +21,12 @@ namespace Triangulo.Class
 
         }
 
-        public Equilatero(Tamaños item, Colores item2, PictureBox pictureBox) : base(item, item2, pictureBox)
+        public Equilatero(Tamaños item, KnownColor item2, PictureBox pictureBox) : base(item, item2, pictureBox)
         {
 
         }
         
-        public Equilatero(Tamaños item, Colores item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
+        public Equilatero(Tamaños item, KnownColor item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
         {
 
         }
