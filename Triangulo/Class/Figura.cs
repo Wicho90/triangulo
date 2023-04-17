@@ -43,9 +43,9 @@ namespace Triangulo.Class.Sizes
 
         public Figura(Tamaños item, PictureBox pictureBox) => SetDatos(item, pictureBox);
         public Figura(Tamaños item, KnownColor item2, PictureBox pictureBox) : this(item, pictureBox) => SetColor(item2);
-        public Figura(Tamaños item, KnownColor item2, Angulos item3, PictureBox pictureBox) : this(item, item2, pictureBox) => SetAngulo(item3);
         
-        
+
+
 
 
         public void KeyPress(object sender, KeyEventArgs e)
@@ -99,49 +99,7 @@ namespace Triangulo.Class.Sizes
             Color = Color.FromKnownColor(item);
         }
 
-        void SetAngulo(Angulos item)
-        {
-
-            if (item.Equals(Angulos.CERO))
-                Angulo = 0;
-            else if (item.Equals(Angulos.CUARENTA_Y_CINCO))
-            {
-                Angulo = -45;
-            }
-            else if (item.Equals(Angulos.NOVENTA))
-            {
-                Angulo = -90;
-            }
-            else if (item.Equals(Angulos.CIENTO_TREINTA_Y_CINCO))
-            {
-                Angulo = -135;
-            }
-            else if (item.Equals(Angulos.CIENTO_OCHENTA))
-            {
-                Angulo = -180;
-            }
-            else if (item.Equals(Angulos.DOSCIENTOS_VEINTICINCO))
-            {
-                Angulo = -225;
-            }
-            else if (item.Equals(Angulos.DOSCIENTOS_SETENTA))
-            {
-                Angulo = -270;
-            }
-            else if (item.Equals(Angulos.TRESCIENTOS_QUINCE))
-            {
-                Angulo = -315;
-            }
-            else if (item.Equals(Angulos.TRESCIENTOS_SESENTA))
-            {
-                Angulo = -360;
-            }
-
-            
-            Brush = new SolidBrush(Color);
-
-
-        }
+     
 
         public void Dibujar()
         {
@@ -152,7 +110,7 @@ namespace Triangulo.Class.Sizes
             Matrix myMatrix = new Matrix();
             myMatrix.RotateAt(Angulo, Punto3, MatrixOrder.Append);
             Graphics.Transform = myMatrix;
-
+            Brush = new SolidBrush(Color);
             Graphics.FillPolygon(Brush, Points().ToArray());
             Graphics.DrawPolygon(Pens.Black, Points().ToArray());
         }

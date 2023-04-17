@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Triangulo.comun
 {
-
     public enum Tipos
     {
         EQUILATERO,
@@ -22,24 +21,5 @@ namespace Triangulo.comun
         ENORME
     }
 
-    public enum Colores
-    {
-        RED,
-        AZUL,
-        VERDE,
-    }
-
-    public enum Angulos
-    {
-        CERO = 0,
-        CUARENTA_Y_CINCO = -45,
-        NOVENTA = -90,
-        CIENTO_TREINTA_Y_CINCO,
-        CIENTO_OCHENTA,
-        DOSCIENTOS_VEINTICINCO,
-        DOSCIENTOS_SETENTA,
-        TRESCIENTOS_QUINCE,
-        TRESCIENTOS_SESENTA
-
-    }
+   
 }

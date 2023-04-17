@@ -11,25 +11,26 @@ namespace Triangulo.Class
 {
     class TrianguloFactory
     {
-        public static ITriangulo GetTriangulo(Tamaños Tamaño, KnownColor Color, Angulos Angulo, Tipos tipo, PictureBox pictureBox)
+
+        public static ITriangulo GetTriangulo(Tamaños Tamaño, KnownColor Color, Tipos tipo, PictureBox pictureBox)
         {
             ITriangulo Triangulo = null;
 
             if (tipo == Tipos.EQUILATERO)
             {
-                Triangulo = new Equilatero(Tamaño, Color, Angulo, pictureBox);
+                Triangulo = new Equilatero(Tamaño, Color, pictureBox);
             }
             else if (tipo == Tipos.ESCALENO)
             {
-                Triangulo = new Escaleno(Tamaño, Color, Angulo, pictureBox);
+                Triangulo = new Escaleno(Tamaño, Color, pictureBox);
             }
             else if (tipo == Tipos.ISOCELES)
             {
-                Triangulo = new Isosceles(Tamaño, Color, Angulo, pictureBox);
+                Triangulo = new Isosceles(Tamaño, Color, pictureBox);
             }
             else
             {
-                Triangulo = new Equilatero(Tamaño, Color, Angulo, pictureBox);
+                Triangulo = new Equilatero(Tamaño, Color, pictureBox);
             }
 
             return Triangulo;

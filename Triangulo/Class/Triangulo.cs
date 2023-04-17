@@ -27,17 +27,6 @@ namespace Triangulo.Class
         {
 
         }
-
-        public Triangulo(Tamaños item, KnownColor item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
-        {
-
-        }
-
-
         
-
-        
-
-
     }
 }
