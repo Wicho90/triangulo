@@ -26,10 +26,7 @@ namespace Triangulo.Class
 
         }
         
-        public Equilatero(Tamaños item, Colores item2, Angulos item3, PictureBox pictureBox) : base(item, item2, item3, pictureBox)
-        {
-
-        }
+      
 
        
     }
