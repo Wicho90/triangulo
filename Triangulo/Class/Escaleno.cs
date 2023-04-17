@@ -31,6 +31,7 @@ namespace Triangulo.Class
 
         }
 
+
         protected override void SetDatos(Tamaños item, PictureBox pictureBox)
         {
             if (item.Equals(Tamaños.CHICO))

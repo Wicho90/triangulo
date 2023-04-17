@@ -22,5 +22,6 @@ namespace Triangulo.Class
 
         event EventHandler Up;
         void KeyPress(object sender, KeyEventArgs e);
+
     }
 }

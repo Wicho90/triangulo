@@ -30,6 +30,8 @@ namespace Triangulo
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxAngulo = new System.Windows.Forms.ComboBox();
@@ -40,8 +42,6 @@ namespace Triangulo
             this.cbxTalla = new System.Windows.Forms.ComboBox();
             this.btnDibujar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,26 @@ namespace Triangulo
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(67, 405);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(177, 23);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "Area";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(65, 366);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 33);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Perimetro";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label4
             // 
@@ -179,26 +199,6 @@ namespace Triangulo
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(65, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 33);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Perimetro";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(67, 405);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "btnArea";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Form1
             // 

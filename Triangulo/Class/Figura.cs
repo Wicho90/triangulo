@@ -14,10 +14,6 @@ namespace Triangulo.Class.Sizes
     abstract class Figura
     {
         public event EventHandler Up;
-        public Point Punto1 { get; set; } = new Point(300, 50);
-        public Point Punto2 { get; set; } = new Point(330, 100);
-        public Point Punto3 { get; set; } = new Point(270, 100);
-
 
         public Keys KeyUp { get; set; } = Keys.W;
         public Keys KeyDown { get; set; } = Keys.S;
@@ -25,6 +21,11 @@ namespace Triangulo.Class.Sizes
         public Keys KeyLeft { get; set; } = Keys.A;
         public Keys KeyRotateRight { get; set; } = Keys.E;
         public Keys KeyRotateLeft { get; set; } = Keys.Q;
+
+        public Point Punto1 = new Point(300, 50);
+        public Point Punto2 = new Point(330, 100);
+        public Point Punto3 = new Point(270, 100);
+
         public PictureBox PictureBox { get; set; }
         Bitmap Bitmap { get; set; }
         Graphics Graphics { get; set; }
@@ -44,7 +45,9 @@ namespace Triangulo.Class.Sizes
         public Figura(Tamaños item, Colores item2, PictureBox pictureBox) : this(item, pictureBox) => SetColor(item2);
         public Figura(Tamaños item, Colores item2, Angulos item3, PictureBox pictureBox) : this(item, item2, pictureBox) => SetAngulo(item3);
         
-  
+        
+
+
         public void KeyPress(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.Equals(KeyUp))
@@ -89,11 +92,6 @@ namespace Triangulo.Class.Sizes
 
             PictureBox = pictureBox;
             
-           
-
-
-
-
         }
 
         void SetColor(Colores item)
@@ -173,31 +171,29 @@ namespace Triangulo.Class.Sizes
 
         void MoverDerecha()
         {
-
-            Punto1 = new Point(Punto1.X + 20, Punto1.Y);
-            Punto2 = new Point(Punto2.X + 20, Punto2.Y);
-            Punto3 = new Point(Punto3.X + 20, Punto3.Y);
+            Punto1.X += 20;
+            Punto2.X += 20;
+            Punto3.X += 20;
         }
         
         void MoverIzquierda()
         {
-            Punto1 = new Point(Punto1.X - 20, Punto1.Y);
-            Punto2 = new Point(Punto2.X - 20, Punto2.Y);
-            Punto3 = new Point(Punto3.X - 20, Punto3.Y);
+            Punto1.X -= 20;
+            Punto2.X -= 20;
+            Punto3.X -= 20;
         }
         void MoverArriba()
         {
-            Console.WriteLine("Moviendo arriba");
-            Punto1 = new Point(Punto1.X, Punto1.Y - 20);
-            Punto2 = new Point(Punto2.X, Punto2.Y - 20);
-            Punto3 = new Point(Punto3.X, Punto3.Y - 20);
+            Punto1.Y -= 20;
+            Punto2.Y -= 20;
+            Punto3.Y -= 20;
         }
         
         void MoverAbajo()
         {
-            Punto1 = new Point(Punto1.X, Punto1.Y + 20);
-            Punto2 = new Point(Punto2.X, Punto2.Y + 20);
-            Punto3 = new Point(Punto3.X, Punto3.Y + 20);
+            Punto1.Y += 20;
+            Punto2.Y += 20;
+            Punto3.Y += 20;
         }
 
         void RotarDerecha()

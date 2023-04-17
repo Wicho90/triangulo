@@ -30,6 +30,7 @@ namespace Triangulo
             cbxTipo.DataSource = Enum.GetValues(typeof(Tipos));
             cbxAngulo.DataSource = Enum.GetValues(typeof(Angulos));
 
+
         }
 
         private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,12 +60,11 @@ namespace Triangulo
             Enum.TryParse<Angulos>(cbxAngulo.SelectedValue.ToString(), out Angulo);
         }
 
-        
-        
+
+
 
         private void btnDibujar_KeyDown(object sender, KeyEventArgs e)
         {
-
             Triangulo.KeyPress(sender, e);
         }
 
