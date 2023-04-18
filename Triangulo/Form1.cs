@@ -8,7 +8,7 @@ namespace Triangulo
 {
     public partial class Form1 : Form
     {
-        ITriangulo Triangulo { get; set; }
+        ITriangulo Triangulo { get; set; } = new Escaleno();
 
         Tamaños Tamaño;
 
@@ -24,11 +24,15 @@ namespace Triangulo
             cbxColor.DataSource = Enum.GetValues(typeof(KnownColor));
 
             cbxTipo.DataSource = Enum.GetValues(typeof(Tipos));
+
+            Triangulo = new Escaleno(); 
+            
         }
         
         private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
         {
             Enum.TryParse<Tamaños>(cbxTalla.SelectedValue.ToString(), out Tamaño);
+       
         }
 
         private void cbxColor_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,8 +42,9 @@ namespace Triangulo
         }
         private void dibujar_Click(object sender, EventArgs e)
         {
-
+           
             Triangulo = TrianguloFactory.GetTriangulo(Tamaño, Color, Tipo, pictureBox1);
+            btnDibujar.KeyDown += Triangulo.KeyDownOn;
             Triangulo.Dibujar();
         }
 
@@ -51,15 +56,15 @@ namespace Triangulo
         }
 
 
-        private void btnDibujar_KeyDown(object sender, KeyEventArgs e)
-        {
-            Triangulo.KeyPress(sender, e);
-        }
+        //private void btnDibujar_KeyDown(object sender, KeyEventArgs e)
+       // {
+         //   Triangulo.KeyPress(sender, e);
+        //}
 
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (Triangulo != null)
+            if (Triangulo != null)//exepcion para que el programa no se detenga
                 MessageBox.Show(Triangulo.GetPerimetro().ToString() + "cm");
             else
                 MessageBox.Show("Porfavor dibuja el triangulo antes");
@@ -67,12 +72,12 @@ namespace Triangulo
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if (Triangulo != null)
+            if (Triangulo != null) //exepcion para que el programa no se detenga
                 MessageBox.Show(Triangulo.GetArea().ToString() + "cm2");
             else
                 MessageBox.Show("Porfavor dibuja el triangulo antes");
         }
 
-
+       
     }
 }

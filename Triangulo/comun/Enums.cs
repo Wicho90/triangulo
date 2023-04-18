@@ -21,5 +21,11 @@ namespace Triangulo.comun
         ENORME
     }
 
+    public enum Movimiento
+    {
+       DESPLAZAR=20,
+       ROTAR = 45
+    }
+
    
 }

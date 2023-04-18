@@ -43,13 +43,16 @@ namespace Triangulo.Class.Sizes
 
         public Figura(Tamaños item, PictureBox pictureBox) => SetDatos(item, pictureBox);
         public Figura(Tamaños item, KnownColor item2, PictureBox pictureBox) : this(item, pictureBox) => SetColor(item2);
-        
 
 
 
 
-        public void KeyPress(object sender, KeyEventArgs e)
+
+
+        public void KeyDownOn(object sender, KeyEventArgs e)
         {
+            //eventos para la rotacion y desplazamiento 
+
             if (e.KeyCode.Equals(KeyUp))
                 MoverArriba();
             else if (e.KeyCode.Equals(KeyDown))
@@ -91,7 +94,7 @@ namespace Triangulo.Class.Sizes
             }
 
             PictureBox = pictureBox;
-            
+
         }
 
         void SetColor(KnownColor item)
@@ -99,7 +102,7 @@ namespace Triangulo.Class.Sizes
             Color = Color.FromKnownColor(item);
         }
 
-     
+
 
         public void Dibujar()
         {
@@ -122,40 +125,40 @@ namespace Triangulo.Class.Sizes
 
         void MoverDerecha()
         {
-            Punto1.X += 20;
-            Punto2.X += 20;
-            Punto3.X += 20;
+            Punto1.X += Convert.ToInt32(Movimiento.DESPLAZAR);
+            Punto2.X += Convert.ToInt32(Movimiento.DESPLAZAR);
+            Punto3.X += Convert.ToInt32(Movimiento.DESPLAZAR);
         }
-        
+
         void MoverIzquierda()
         {
-            Punto1.X -= 20;
-            Punto2.X -= 20;
-            Punto3.X -= 20;
+            Punto1.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
+            Punto2.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
+            Punto3.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
         }
         void MoverArriba()
         {
-            Punto1.Y -= 20;
-            Punto2.Y -= 20;
-            Punto3.Y -= 20;
+            Punto1.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
+            Punto2.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
+            Punto3.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
         }
-        
+
         void MoverAbajo()
         {
-            Punto1.Y += 20;
-            Punto2.Y += 20;
-            Punto3.Y += 20;
+            Punto1.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
+            Punto2.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
+            Punto3.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
         }
+        //Rotacion del Triangulo
+        void RotarDerecha() => Angulo += Convert.ToInt32(Movimiento.ROTAR);
 
-        void RotarDerecha()
-        {
-            Angulo += 45;
-        }
 
-        void RotarIzquierda()
-        {
-            Angulo -= 45;
-        }
+
+
+        void RotarIzquierda() => Angulo -= Convert.ToInt32(Movimiento.ROTAR);
+
+
+
 
 
         public int GetPerimetro()

@@ -11,8 +11,7 @@ namespace Triangulo.Class
 {
     public interface ITriangulo
     {
-        Keys KeyUp { get; set; }
-        Keys KeyDown { get; set; }
+        
         List<Point> Points();
         void Dibujar();
      
@@ -21,7 +20,7 @@ namespace Triangulo.Class
         int GetArea();
 
         event EventHandler Up;
-        void KeyPress(object sender, KeyEventArgs e);
+        void KeyDownOn(object sender, KeyEventArgs e);
 
     }
 }

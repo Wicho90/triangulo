@@ -57,19 +57,18 @@ namespace Triangulo
             this.groupBox1.Controls.Add(this.cbxTalla);
             this.groupBox1.Controls.Add(this.btnDibujar);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(271, 613);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
-            
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(38, 287);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 19);
             this.button2.TabIndex = 28;
@@ -80,7 +79,7 @@ namespace Triangulo
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(37, 255);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 27);
             this.button1.TabIndex = 27;
@@ -103,7 +102,7 @@ namespace Triangulo
             this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipo.FormattingEnabled = true;
             this.cbxTipo.Location = new System.Drawing.Point(15, 160);
-            this.cbxTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxTipo.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(92, 21);
             this.cbxTipo.TabIndex = 19;
@@ -115,7 +114,7 @@ namespace Triangulo
             this.cbxColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxColor.FormattingEnabled = true;
             this.cbxColor.Location = new System.Drawing.Point(15, 112);
-            this.cbxColor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxColor.Margin = new System.Windows.Forms.Padding(2);
             this.cbxColor.Name = "cbxColor";
             this.cbxColor.Size = new System.Drawing.Size(92, 21);
             this.cbxColor.TabIndex = 18;
@@ -147,7 +146,7 @@ namespace Triangulo
             this.cbxTalla.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTalla.FormattingEnabled = true;
             this.cbxTalla.Location = new System.Drawing.Point(15, 64);
-            this.cbxTalla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxTalla.Margin = new System.Windows.Forms.Padding(2);
             this.cbxTalla.Name = "cbxTalla";
             this.cbxTalla.Size = new System.Drawing.Size(92, 21);
             this.cbxTalla.TabIndex = 15;
@@ -157,7 +156,7 @@ namespace Triangulo
             // btnDibujar
             // 
             this.btnDibujar.Location = new System.Drawing.Point(38, 209);
-            this.btnDibujar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDibujar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDibujar.Name = "btnDibujar";
             this.btnDibujar.Size = new System.Drawing.Size(124, 19);
             this.btnDibujar.TabIndex = 12;
@@ -165,19 +164,21 @@ namespace Triangulo
             this.btnDibujar.Text = "Dibujar";
             this.btnDibujar.UseVisualStyleBackColor = true;
             this.btnDibujar.Click += new System.EventHandler(this.dibujar_Click);
-            this.btnDibujar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnDibujar_KeyDown);
-          
+            
+
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pictureBox1.Location = new System.Drawing.Point(291, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(600, 613);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-          
+           
+           
+            
             // 
             // Form1
             // 
@@ -186,11 +187,10 @@ namespace Triangulo
             this.ClientSize = new System.Drawing.Size(902, 632);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
-           
-           
+            
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
