@@ -23,5 +23,7 @@ namespace Triangulo.Class
         void KeyDownOn(object sender, KeyEventArgs e);
         void OnChangeColor(object sender, EventArgs e);
 
+        void OnSizeChange(object sender, EventArgs e);
+
     }
 }

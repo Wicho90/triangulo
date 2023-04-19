@@ -7,13 +7,13 @@ namespace Triangulo.Class
     class Isosceles : Triangulo, ITriangulo
     {
 
-        public Isosceles(Tamaños item, PictureBox pictureBox, ComboBox cbxColor) : base(item, pictureBox, cbxColor)
+        public Isosceles(Tamaños item, PictureBox pictureBox, ComboBox cbxColor, ComboBox cbxTalla) : base(item, pictureBox, cbxColor, cbxTalla)
         {
 
         }
 
 
-        protected override void SetDatos(Tamaños item, PictureBox pictureBox, ComboBox cbxColor)
+        protected override void SetDatos(Tamaños item, PictureBox pictureBox, ComboBox cbxColor, ComboBox cbxTalla)
         {
             if (item.Equals(Tamaños.CHICO))
             {
@@ -39,6 +39,7 @@ namespace Triangulo.Class
             
             PictureBox = pictureBox;
             CbxColor = cbxColor;
+            CbxTalla = cbxTalla;
             Color = Color.Black;
         }
     }

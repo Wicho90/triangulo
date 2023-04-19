@@ -10,7 +10,7 @@ namespace Triangulo.Class
 
 
 
-        public Triangulo(Tamaños item, PictureBox pictureBox, ComboBox cbxColor) : base(item, pictureBox, cbxColor)
+        public Triangulo(Tamaños item, PictureBox pictureBox, ComboBox cbxColor, ComboBox cbxTalla) : base(item, pictureBox, cbxColor, cbxTalla)
         {
 
         }

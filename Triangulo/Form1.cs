@@ -11,7 +11,6 @@ namespace Triangulo
 
         ITriangulo Triangulo { get; set; }
 
-        Tamaños Tamaño;
 
         
         Tipos Tipo;
@@ -20,27 +19,25 @@ namespace Triangulo
         public Form1()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            
             cbxTalla.DataSource = Enum.GetValues(typeof(Tamaños));
 
             cbxColor.DataSource = Enum.GetValues(typeof(KnownColor));
 
             cbxTipo.DataSource = Enum.GetValues(typeof(Tipos));
 
-            Triangulo = TrianguloFactory.GetTriangulo(Tamaños.ENORME, Tipo, pbxTriangulo, cbxColor);
+            Triangulo = TrianguloFactory.GetTriangulo(Tamaños.CHICO, Tipo, pbxTriangulo, cbxColor, cbxTalla);
 
             Triangulo.Dibujar();
-            cbxColor.SelectedIndexChanged += Triangulo.OnChangeColor;
-            this.KeyPreview = true;
-
+            
             this.KeyDown += Triangulo.KeyDownOn;
+            cbxColor.SelectedIndexChanged += Triangulo.OnChangeColor;
+            cbxTalla.SelectedIndexChanged += Triangulo.OnSizeChange;
 
         }
         
-        private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Enum.TryParse<Tamaños>(cbxTalla.SelectedValue.ToString(), out Tamaño);
-       
-        }
+
 
        
 

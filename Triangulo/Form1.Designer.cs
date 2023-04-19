@@ -149,7 +149,6 @@ namespace Triangulo
             this.cbxTalla.Size = new System.Drawing.Size(92, 21);
             this.cbxTalla.TabIndex = 15;
             this.cbxTalla.TabStop = false;
-            this.cbxTalla.SelectedIndexChanged += new System.EventHandler(this.cbxTalla_SelectedIndexChanged);
             // 
             // pbxTriangulo
             // 

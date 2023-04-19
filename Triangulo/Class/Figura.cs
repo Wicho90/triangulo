@@ -25,6 +25,7 @@ namespace Triangulo.Class.Sizes
 
         public PictureBox PictureBox { get; set; }
         public ComboBox CbxColor { get; set; }
+        public ComboBox CbxTalla { get; set; }
         Bitmap Bitmap { get; set; }
         Graphics Graphics { get; set; }
         Brush Brush { get; set; }
@@ -42,8 +43,8 @@ namespace Triangulo.Class.Sizes
         {
         }
 
-        public Figura(Tamaños item, PictureBox pictureBox, ComboBox cbxColor) =>
-            SetDatos(item, pictureBox, cbxColor);
+        public Figura(Tamaños item, PictureBox pictureBox, ComboBox cbxColor, ComboBox cbxTalla) =>
+            SetDatos(item, pictureBox, cbxColor, cbxTalla);
 
 
 
@@ -52,6 +53,16 @@ namespace Triangulo.Class.Sizes
             KnownColor selectedColor;
             Enum.TryParse<KnownColor>(CbxColor.SelectedValue.ToString(), out selectedColor);
             Color = Color.FromKnownColor(selectedColor);
+            Dibujar();
+        }
+
+        public void OnSizeChange(object sender, EventArgs e)
+        {
+            Tamaños tamaño;
+            Enum.TryParse<Tamaños>(CbxTalla.SelectedValue.ToString(), out tamaño);
+
+            SetTamaño(tamaño);
+
             Dibujar();
         }
 
@@ -75,42 +86,53 @@ namespace Triangulo.Class.Sizes
 
             Dibujar();
         }
-        protected virtual void SetDatos(Tamaños item, PictureBox pictureBox, ComboBox cbxColor)
+        protected virtual void SetDatos(Tamaños item, PictureBox pictureBox, ComboBox cbxColor, ComboBox cbxTalla)
         {
-            Punto1 = new Point(300, 50);
 
-            if (item.Equals(Tamaños.CHICO))
-            {
-                Punto2 = new Point(Punto1.X+30, Punto1.Y+52);
-                Punto3 = new Point(270, 102);
-            }
-            else if (item.Equals(Tamaños.MEDIANO))
-            {
-                Punto2 = new Point(Punto1.X+48, Punto1.Y + 84);
-                Punto3 = new Point(252, 134);
-            }
-            else if (item.Equals(Tamaños.GRANDE))
-            {
-                Punto2 = new Point(Punto1.X + 66, Punto1.Y + 115);
-                Punto3 = new Point(234, 165);
-            }
-            else if (item.Equals(Tamaños.ENORME))
-            {
-                Punto2 = new Point(Punto1.X + 84, Punto1.Y + 146);
-                Punto3 = new Point(216, 196);
-            }
-
+            SetTamaño(item);
             PictureBox = pictureBox;
             CbxColor = cbxColor;
+            CbxTalla = cbxTalla;
             Color = Color.Black;
 
         }
 
-        void SetColor(KnownColor item)
+        protected void SetTamaño(Tamaños item)
         {
-            Color = Color.FromKnownColor(item);
-        }
+            if (item.Equals(Tamaños.CHICO))
+            {
+                Punto2.X = Punto1.X + 30;
+                Punto2.Y = Punto1.Y + 52;
 
+                Punto3.X = Punto1.X - 30;
+                Punto3.Y = Punto1.Y + 52;
+
+            }
+            else if (item.Equals(Tamaños.MEDIANO))
+            {
+                Punto2.X = Punto1.X + 48;
+                Punto2.Y = Punto1.Y + 84;
+
+                Punto3.X = Punto1.X - 48;
+                Punto3.Y = Punto1.Y + 84;
+            }
+            else if (item.Equals(Tamaños.GRANDE))
+            {
+                Punto2.X = Punto1.X + 66;
+                Punto2.Y = Punto1.Y + 115;
+
+                Punto3.X = Punto1.X - 66;
+                Punto3.Y = Punto1.Y + 115;
+            }
+            else if (item.Equals(Tamaños.ENORME))
+            {
+                Punto2.X = Punto1.X + 84;
+                Punto2.Y = Punto1.Y + 146;
+
+                Punto3.X = Punto1.X - 84;
+                Punto3.Y = Punto1.Y + 146;
+            }
+        }
 
 
         public void Dibujar()

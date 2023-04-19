@@ -13,7 +13,7 @@ namespace Triangulo.Class
     {
 
 
-        public Equilatero(Tamaños item, PictureBox pictureBox, ComboBox cbxColor) : base(item, pictureBox, cbxColor)
+        public Equilatero(Tamaños item, PictureBox pictureBox, ComboBox cbxColor, ComboBox cbxTalla) : base(item, pictureBox, cbxColor, cbxTalla)
         {
 
         }
