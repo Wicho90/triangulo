@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Triangulo.comun;
 
@@ -36,6 +33,9 @@ namespace Triangulo.Class.Sizes
         protected int LadoC = 100;
         public Color Color { get; set; }
 
+        //limite del picture box
+        protected int LimiteP = 570;
+        protected int LimiteN = 25;
         public int Angulo { get; set; } = 0;
         public Figura()
         {
@@ -125,29 +125,46 @@ namespace Triangulo.Class.Sizes
 
         void MoverDerecha()
         {
-            Punto1.X += Convert.ToInt32(Movimiento.DESPLAZAR);
-            Punto2.X += Convert.ToInt32(Movimiento.DESPLAZAR);
-            Punto3.X += Convert.ToInt32(Movimiento.DESPLAZAR);
+            if (Punto2.X <= LimiteP)
+            {
+                Punto1.X += Convert.ToInt32(Movimiento.DESPLAZAR);
+                Punto2.X += Convert.ToInt32(Movimiento.DESPLAZAR);
+                Punto3.X += Convert.ToInt32(Movimiento.DESPLAZAR);
+            }
+
+
         }
 
         void MoverIzquierda()
         {
-            Punto1.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
-            Punto2.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
-            Punto3.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
+            if (Punto3.X >= LimiteN)
+            {
+                Punto1.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
+                Punto2.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
+                Punto3.X -= Convert.ToInt32(Movimiento.DESPLAZAR);
+            }
+
         }
         void MoverArriba()
         {
-            Punto1.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
-            Punto2.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
-            Punto3.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
+            if (Punto1.Y >= LimiteN)
+            {
+                Punto1.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
+                Punto2.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
+                Punto3.Y -= Convert.ToInt32(Movimiento.DESPLAZAR);
+            }
+
         }
 
         void MoverAbajo()
         {
-            Punto1.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
-            Punto2.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
-            Punto3.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
+            if (Punto3.Y<=LimiteP)
+            {
+                Punto1.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
+                Punto2.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
+                Punto3.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
+            }
+            
         }
         //Rotacion del Triangulo
         void RotarDerecha() => Angulo += Convert.ToInt32(Movimiento.ROTAR);
@@ -168,7 +185,7 @@ namespace Triangulo.Class.Sizes
             return LadoA + LadoB + LadoC;
 
         }
-        
+
         public int GetArea()
         {
             SetLados();

@@ -78,6 +78,9 @@ namespace Triangulo
                 MessageBox.Show("Porfavor dibuja el triangulo antes");
         }
 
-       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

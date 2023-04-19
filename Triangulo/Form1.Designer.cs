@@ -164,21 +164,16 @@ namespace Triangulo
             this.btnDibujar.Text = "Dibujar";
             this.btnDibujar.UseVisualStyleBackColor = true;
             this.btnDibujar.Click += new System.EventHandler(this.dibujar_Click);
-            
-
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox1.Location = new System.Drawing.Point(291, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(285, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 613);
+            this.pictureBox1.Size = new System.Drawing.Size(602, 610);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-           
-           
-            
             // 
             // Form1
             // 
@@ -190,7 +185,7 @@ namespace Triangulo
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
-            
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
