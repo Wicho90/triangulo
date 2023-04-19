@@ -26,11 +26,14 @@ namespace Triangulo
 
             cbxTipo.DataSource = Enum.GetValues(typeof(Tipos));
 
-            Triangulo = TrianguloFactory.GetTriangulo(Tamaño, Tipo, pbxTriangulo, cbxColor);
+            Triangulo = TrianguloFactory.GetTriangulo(Tamaños.ENORME, Tipo, pbxTriangulo, cbxColor);
 
             Triangulo.Dibujar();
-            btnDibujar.KeyDown += Triangulo.KeyDownOn;
             cbxColor.SelectedIndexChanged += Triangulo.OnChangeColor;
+            this.KeyPreview = true;
+
+            this.KeyDown += Triangulo.KeyDownOn;
+
         }
         
         private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,19 +42,7 @@ namespace Triangulo
        
         }
 
-        private void cbxColor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            
-        }
-        private void dibujar_Click(object sender, EventArgs e)
-        {
-           
-           
-            
-            
-        }
-
+       
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,10 +51,7 @@ namespace Triangulo
         }
 
 
-        //private void btnDibujar_KeyDown(object sender, KeyEventArgs e)
-       // {
-         //   Triangulo.KeyPress(sender, e);
-        //}
+        
 
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -82,14 +70,8 @@ namespace Triangulo
                 MessageBox.Show("Porfavor dibuja el triangulo antes");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void panel1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -81,22 +81,22 @@ namespace Triangulo.Class.Sizes
 
             if (item.Equals(Tamaños.CHICO))
             {
-                Punto2 = new Point(330, 102);
+                Punto2 = new Point(Punto1.X+30, Punto1.Y+52);
                 Punto3 = new Point(270, 102);
             }
             else if (item.Equals(Tamaños.MEDIANO))
             {
-                Punto2 = new Point(348, 134);
+                Punto2 = new Point(Punto1.X+48, Punto1.Y + 84);
                 Punto3 = new Point(252, 134);
             }
             else if (item.Equals(Tamaños.GRANDE))
             {
-                Punto2 = new Point(366, 165);
+                Punto2 = new Point(Punto1.X + 66, Punto1.Y + 115);
                 Punto3 = new Point(234, 165);
             }
             else if (item.Equals(Tamaños.ENORME))
             {
-                Punto2 = new Point(384, 196);
+                Punto2 = new Point(Punto1.X + 84, Punto1.Y + 146);
                 Punto3 = new Point(216, 196);
             }
 

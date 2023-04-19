@@ -38,7 +38,6 @@ namespace Triangulo
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxTalla = new System.Windows.Forms.ComboBox();
-            this.btnDibujar = new System.Windows.Forms.Button();
             this.pbxTriangulo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxTriangulo)).BeginInit();
@@ -55,7 +54,6 @@ namespace Triangulo
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbxTalla);
-            this.groupBox1.Controls.Add(this.btnDibujar);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -119,7 +117,7 @@ namespace Triangulo
             this.cbxColor.Size = new System.Drawing.Size(92, 21);
             this.cbxColor.TabIndex = 18;
             this.cbxColor.TabStop = false;
-            this.cbxColor.SelectedIndexChanged += new System.EventHandler(this.cbxColor_SelectedIndexChanged);
+            
             // 
             // label2
             // 
@@ -153,18 +151,6 @@ namespace Triangulo
             this.cbxTalla.TabStop = false;
             this.cbxTalla.SelectedIndexChanged += new System.EventHandler(this.cbxTalla_SelectedIndexChanged);
             // 
-            // btnDibujar
-            // 
-            this.btnDibujar.Location = new System.Drawing.Point(38, 209);
-            this.btnDibujar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDibujar.Name = "btnDibujar";
-            this.btnDibujar.Size = new System.Drawing.Size(124, 19);
-            this.btnDibujar.TabIndex = 12;
-            this.btnDibujar.TabStop = false;
-            this.btnDibujar.Text = "Dibujar";
-            this.btnDibujar.UseVisualStyleBackColor = true;
-            this.btnDibujar.Click += new System.EventHandler(this.dibujar_Click);
-            // 
             // pbxTriangulo
             // 
             this.pbxTriangulo.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -172,7 +158,7 @@ namespace Triangulo
             this.pbxTriangulo.Location = new System.Drawing.Point(284, 10);
             this.pbxTriangulo.Margin = new System.Windows.Forms.Padding(2);
             this.pbxTriangulo.Name = "pbxTriangulo";
-            this.pbxTriangulo.Size = new System.Drawing.Size(602, 610);
+            this.pbxTriangulo.Size = new System.Drawing.Size(607, 613);
             this.pbxTriangulo.TabIndex = 1;
             this.pbxTriangulo.TabStop = false;
             // 
@@ -186,7 +172,7 @@ namespace Triangulo
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+          
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxTriangulo)).EndInit();
@@ -204,7 +190,6 @@ namespace Triangulo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnDibujar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
