@@ -8,11 +8,12 @@ namespace Triangulo
 {
     public partial class Form1 : Form
     {
-        ITriangulo Triangulo { get; set; } = new Escaleno();
+
+        ITriangulo Triangulo { get; set; }
 
         Tamaños Tamaño;
 
-        KnownColor Color;
+        
         Tipos Tipo;
 
 
@@ -25,8 +26,11 @@ namespace Triangulo
 
             cbxTipo.DataSource = Enum.GetValues(typeof(Tipos));
 
-            Triangulo = new Escaleno(); 
-            
+            Triangulo = TrianguloFactory.GetTriangulo(Tamaño, Tipo, pbxTriangulo, cbxColor);
+
+            Triangulo.Dibujar();
+            btnDibujar.KeyDown += Triangulo.KeyDownOn;
+            cbxColor.SelectedIndexChanged += Triangulo.OnChangeColor;
         }
         
         private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,14 +42,14 @@ namespace Triangulo
         private void cbxColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            Enum.TryParse<KnownColor>(cbxColor.SelectedValue.ToString(), out Color);
+            
         }
         private void dibujar_Click(object sender, EventArgs e)
         {
            
-            Triangulo = TrianguloFactory.GetTriangulo(Tamaño, Color, Tipo, pictureBox1);
-            btnDibujar.KeyDown += Triangulo.KeyDownOn;
-            Triangulo.Dibujar();
+           
+            
+            
         }
 
 
@@ -79,6 +83,11 @@ namespace Triangulo
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
 
         }

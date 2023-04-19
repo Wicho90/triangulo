@@ -24,6 +24,7 @@ namespace Triangulo.Class.Sizes
         public Point Punto3 = new Point(270, 100);
 
         public PictureBox PictureBox { get; set; }
+        public ComboBox CbxColor { get; set; }
         Bitmap Bitmap { get; set; }
         Graphics Graphics { get; set; }
         Brush Brush { get; set; }
@@ -41,12 +42,18 @@ namespace Triangulo.Class.Sizes
         {
         }
 
-        public Figura(Tamaños item, PictureBox pictureBox) => SetDatos(item, pictureBox);
-        public Figura(Tamaños item, KnownColor item2, PictureBox pictureBox) : this(item, pictureBox) => SetColor(item2);
+        public Figura(Tamaños item, PictureBox pictureBox, ComboBox cbxColor) =>
+            SetDatos(item, pictureBox, cbxColor);
 
 
 
-
+        public void OnChangeColor(object sender, EventArgs e)
+        {
+            KnownColor selectedColor;
+            Enum.TryParse<KnownColor>(CbxColor.SelectedValue.ToString(), out selectedColor);
+            Color = Color.FromKnownColor(selectedColor);
+            Dibujar();
+        }
 
 
         public void KeyDownOn(object sender, KeyEventArgs e)
@@ -68,7 +75,7 @@ namespace Triangulo.Class.Sizes
 
             Dibujar();
         }
-        protected virtual void SetDatos(Tamaños item, PictureBox pictureBox)
+        protected virtual void SetDatos(Tamaños item, PictureBox pictureBox, ComboBox cbxColor)
         {
             Punto1 = new Point(300, 50);
 
@@ -94,6 +101,8 @@ namespace Triangulo.Class.Sizes
             }
 
             PictureBox = pictureBox;
+            CbxColor = cbxColor;
+            Color = Color.Black;
 
         }
 
@@ -158,13 +167,13 @@ namespace Triangulo.Class.Sizes
 
         void MoverAbajo()
         {
-            if (Punto3.Y<=LimiteP)
+            if (Punto3.Y <= LimiteP)
             {
                 Punto1.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
                 Punto2.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
                 Punto3.Y += Convert.ToInt32(Movimiento.DESPLAZAR);
             }
-            
+
         }
         //Rotacion del Triangulo
         void RotarDerecha() => Angulo += Convert.ToInt32(Movimiento.ROTAR);

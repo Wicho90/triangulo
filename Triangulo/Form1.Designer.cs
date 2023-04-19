@@ -39,9 +39,9 @@ namespace Triangulo
             this.label1 = new System.Windows.Forms.Label();
             this.cbxTalla = new System.Windows.Forms.ComboBox();
             this.btnDibujar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxTriangulo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTriangulo)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -165,22 +165,23 @@ namespace Triangulo
             this.btnDibujar.UseVisualStyleBackColor = true;
             this.btnDibujar.Click += new System.EventHandler(this.dibujar_Click);
             // 
-            // pictureBox1
+            // pbxTriangulo
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox1.Location = new System.Drawing.Point(285, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(602, 610);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.pbxTriangulo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pbxTriangulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxTriangulo.Location = new System.Drawing.Point(284, 10);
+            this.pbxTriangulo.Margin = new System.Windows.Forms.Padding(2);
+            this.pbxTriangulo.Name = "pbxTriangulo";
+            this.pbxTriangulo.Size = new System.Drawing.Size(602, 610);
+            this.pbxTriangulo.TabIndex = 1;
+            this.pbxTriangulo.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 632);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxTriangulo);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -188,7 +189,7 @@ namespace Triangulo
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxTriangulo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,7 +197,7 @@ namespace Triangulo
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxTriangulo;
         private System.Windows.Forms.ComboBox cbxTalla;
         private System.Windows.Forms.ComboBox cbxColor;
         private System.Windows.Forms.Label label2;

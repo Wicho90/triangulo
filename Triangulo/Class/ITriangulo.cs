@@ -21,6 +21,7 @@ namespace Triangulo.Class
 
         event EventHandler Up;
         void KeyDownOn(object sender, KeyEventArgs e);
+        void OnChangeColor(object sender, EventArgs e);
 
     }
 }

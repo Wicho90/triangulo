@@ -11,22 +11,14 @@ namespace Triangulo.Class
 {
     class Escaleno: Triangulo, ITriangulo
     {
-        public Escaleno(): base()
+       
+
+        public Escaleno(Tamaños item, PictureBox pictureBox,ComboBox cbxColor) : base(item, pictureBox,cbxColor)
         {
 
         }
 
-        public Escaleno(Tamaños item, PictureBox pictureBox) : base(item, pictureBox)
-        {
-
-        }
-
-        public Escaleno(Tamaños item, KnownColor item2, PictureBox pictureBox) : base(item, item2, pictureBox)
-        {
-
-        }
-
-        protected override void SetDatos(Tamaños item, PictureBox pictureBox)
+        protected override void SetDatos(Tamaños item, PictureBox pictureBox, ComboBox cbxColor)
         {
             if (item.Equals(Tamaños.CHICO))
             {
@@ -50,6 +42,8 @@ namespace Triangulo.Class
             }
 
             PictureBox = pictureBox;
+            CbxColor = cbxColor;
+            Color = Color.Black;
         }
 
         

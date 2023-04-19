@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using Triangulo.comun;
 
@@ -11,23 +6,14 @@ namespace Triangulo.Class
 {
     class Isosceles : Triangulo, ITriangulo
     {
-        public Isosceles(): base()
-        {
 
-        }
-
-        public Isosceles(Tamaños item, PictureBox pictureBox) : base(item, pictureBox)
-        {
-
-        }
-
-        public Isosceles(Tamaños item, KnownColor item2, PictureBox pictureBox) : base(item, item2, pictureBox)
+        public Isosceles(Tamaños item, PictureBox pictureBox, ComboBox cbxColor) : base(item, pictureBox, cbxColor)
         {
 
         }
 
 
-        protected override void SetDatos(Tamaños item, PictureBox pictureBox)
+        protected override void SetDatos(Tamaños item, PictureBox pictureBox, ComboBox cbxColor)
         {
             if (item.Equals(Tamaños.CHICO))
             {
@@ -50,7 +36,10 @@ namespace Triangulo.Class
                 Punto3 = new Point(220, 250);
             }
 
+            
             PictureBox = pictureBox;
+            CbxColor = cbxColor;
+            Color = Color.Black;
         }
     }
 }
