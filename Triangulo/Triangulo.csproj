@@ -46,13 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\Equilatero.cs" />
-    <Compile Include="Class\Isosceles.cs" />
-    <Compile Include="Class\Escaleno.cs" />
-    <Compile Include="Class\ITriangulo.cs" />
-    <Compile Include="Class\Figura.cs" />
-    <Compile Include="Class\Triangulo.cs" />
-    <Compile Include="Class\TrianguloFactory.cs" />
+    <Compile Include="clases\triangulos\Equilatero.cs" />
+    <Compile Include="clases\triangulos\Isosceles.cs" />
+    <Compile Include="clases\triangulos\Escaleno.cs" />
+    <Compile Include="clases\ITriangulo.cs" />
+    <Compile Include="clases\Figura.cs" />
+    <Compile Include="clases\Mover.cs" />
+    <Compile Include="clases\triangulos\Triangulo.cs" />
+    <Compile Include="clases\TrianguloFactory.cs" />
     <Compile Include="comun\Enums.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

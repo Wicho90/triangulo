@@ -15,9 +15,7 @@ namespace Triangulo.Class
         List<Point> Points();
         void Dibujar();
      
-        int GetPerimetro();
 
-        int GetArea();
 
         event EventHandler Up;
         void KeyDownOn(object sender, KeyEventArgs e);

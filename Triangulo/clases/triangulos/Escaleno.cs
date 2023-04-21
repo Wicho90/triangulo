@@ -13,12 +13,13 @@ namespace Triangulo.Class
     {
        
 
-        public Escaleno(Tamaños item, PictureBox pictureBox,ComboBox cbxColor, ComboBox cbxTalla) : base(item, pictureBox, cbxColor, cbxTalla)
+        public Escaleno(Tamaños item, PictureBox pictureBox, ComboBox cbxColor, ComboBox cbxTalla, Label lblArea, Label lblPerimetro) :
+            base(item, pictureBox, cbxColor, cbxTalla, lblArea, lblPerimetro)
         {
 
         }
 
-        protected override void SetDatos(Tamaños item, PictureBox pictureBox, ComboBox cbxColor, ComboBox cbxTalla)
+        protected override void SetTamaño(Tamaños item)
         {
             if (item.Equals(Tamaños.CHICO))
             {
@@ -40,11 +41,6 @@ namespace Triangulo.Class
                 Punto2 = new Point(510, 250);
                 Punto3 = new Point(320, 250);
             }
-
-            PictureBox = pictureBox;
-            CbxColor = cbxColor;
-            CbxTalla = cbxTalla;
-            Color = Color.Black;
         }
 
         

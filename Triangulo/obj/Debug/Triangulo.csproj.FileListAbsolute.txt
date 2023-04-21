@@ -18,3 +18,14 @@ C:\Users\Blas Ramos\Source\Repos\Wicho90\triangulo\Triangulo\obj\Debug\Triangulo
 C:\Users\Blas Ramos\Source\Repos\Wicho90\triangulo\Triangulo\obj\Debug\Triangulo.csproj.CoreCompileInputs.cache
 C:\Users\Blas Ramos\Source\Repos\Wicho90\triangulo\Triangulo\obj\Debug\Triangulo.exe
 C:\Users\Blas Ramos\Source\Repos\Wicho90\triangulo\Triangulo\obj\Debug\Triangulo.pdb
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\obj\Debug\Triangulo.csproj.AssemblyReference.cache
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\obj\Debug\Triangulo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\obj\Debug\Triangulo.Form1.resources
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\obj\Debug\Triangulo.Properties.Resources.resources
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\obj\Debug\Triangulo.csproj.GenerateResource.cache
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\obj\Debug\Triangulo.csproj.CoreCompileInputs.cache
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\obj\Debug\Triangulo.exe
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\obj\Debug\Triangulo.pdb
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\bin\Debug\Triangulo.exe.config
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\bin\Debug\Triangulo.exe
+C:\Users\Luis\source\repos\TrianguloV2\Triangulo\bin\Debug\Triangulo.pdb
