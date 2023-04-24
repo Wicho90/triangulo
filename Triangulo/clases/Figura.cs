@@ -118,7 +118,7 @@ namespace Triangulo.Class.Sizes
 
 
 
-        //Rotacion del Triangulo
+        // Rotacion
         void RotarDerecha() => Angulo += Convert.ToInt32(Movimiento.ROTAR);
         void RotarIzquierda() => Angulo -= Convert.ToInt32(Movimiento.ROTAR);
 

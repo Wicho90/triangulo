@@ -46,6 +46,12 @@ namespace Triangulo
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Enum.TryParse<Tipos>(cbxTipo.SelectedValue.ToString(), out Tipo);
+            
+            Triangulo = TrianguloFactory.GetTriangulo(Tamaños.ENORME, Tipo, pbxTriangulo, cbxColor, cbxTalla, lblArea, lblPerimetro);
+
+            Triangulo.Dibujar();
+
+
         }
 
 
@@ -71,6 +77,16 @@ namespace Triangulo
         }
 
         private void pbxTriangulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxTalla_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

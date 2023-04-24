@@ -62,6 +62,7 @@ namespace Triangulo
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblArea
             // 
@@ -143,6 +144,7 @@ namespace Triangulo
             this.cbxTalla.Size = new System.Drawing.Size(121, 24);
             this.cbxTalla.TabIndex = 15;
             this.cbxTalla.TabStop = false;
+            this.cbxTalla.SelectedIndexChanged += new System.EventHandler(this.cbxTalla_SelectedIndexChanged);
             // 
             // pbxTriangulo
             // 
